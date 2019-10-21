@@ -77,13 +77,13 @@
             fireworks = [];
             //定义爆炸的烟花屑
             particles = [];
-            hue = 100;
+            hue = 200;
             /* 初始化色调*/
-            timerTotal = 10;
+            timerTotal = 5;
             /*每隔20下释放一次烟花*/
             timerTick = 0;
-            canvas.width = cw;
-            canvas.height = ch;
+            // canvas.width = cw;
+            // canvas.height = ch;
             //生成min max 之间的随机数
             function random(min, max) {
                 return Math.random() * (max - min) + min;
@@ -117,8 +117,8 @@
                 this.angle = Math.atan2(ty - sy, tx - sx);
                 this.speed = 2; //初始速度
                 this.acceleration = 1.05; //加速度
-                this.brightness = random(50, 70); //明度
-                this.targetRadius = 5; //目标位置标示圆圈的初始半径
+                this.brightness = random(70, 100); //明度
+                this.targetRadius = 20; //目标位置标示圆圈的初始半径
             }
             //开始更新烟花的位置
             Firework.prototype.update = function (index) {
@@ -201,7 +201,7 @@
 
             function createParticles(x, y) {
                 //生成30个烟花碎屑
-                var particleCount = 300;
+                var particleCount = 500;
                 while (particleCount--) {
                     particles.push(new Particle(x, y));
                 }
